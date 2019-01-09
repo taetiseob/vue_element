@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src=" https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <script>
+            /*
+                모든 훅 중에 가장 먼저 실행되는 훅이다. 
+                아직 data와 events(vm.$on, vm.$once, vm.$off, vm.$emit)가 세팅되지 않은 시점
+                이므로 접근하려고 하면 에러를 뿜어낼 것이다.
+            */
+              export default {
+                data () {
+                    return {
+                        title: ''
+                    }
+                    },
+
+                    beforeCreate () {
+                    //can't use Data(this.title ...), events(vm.$on, vm.$once, vm.$off, vm.$emit)
+                    }
+                }
+        </script>
+    </body>
+</html>

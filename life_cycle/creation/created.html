@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src=" https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <script>
+            /*
+                created 훅에서는 이제 data와 events가 활성화되어 접근할 수 있다.
+                 여전히 템플릿과 가상돔은 마운트 및 렌더링되지 않은 상태이다.
+            */
+              export default {
+                data () {
+                        return {
+                            title: ''
+                        }
+                    },
+                    computed: {
+                    titleComputed() {
+                        console.log('I change when this.property changes.')
+                        return this.property
+                    }
+                },
+                created () {
+                //can use Data(this.title, this.titleComputed ...), events(vm.$on, vm.$once, vm.$off, vm.$emit)
+                //don't use $el
+                }
+            }
+        </script>
+    </body>
+</html>

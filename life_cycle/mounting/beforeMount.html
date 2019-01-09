@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src=" https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <script>
+            /*
+                beforeMount 훅은 템플릿과 렌더 함수들이 컴파일된 후에 첫 렌더링이 일어나기 직전에 실행된다. 
+                대부분의 경우에 사용하지 않는 것이 좋다. 그리고 서버사이드 렌더링시에는 호출되지 않는다.
+            */
+            export default {
+                beforeMount() {
+                    console.log(`this.$el doesn't exist yet, but it will soon!`)
+                }
+            }
+        </script>
+    </body>
+</html>

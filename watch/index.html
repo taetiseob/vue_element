@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+         
+            <div id="app">
+                <input type="text" v-model='always'/>
+                <div>{{ing}}</div>
+            </div>
+        <!-- script 들어가는 부분 -->
+        <script>
+            var demo = new Vue({
+            el : "#app",
+            data : {
+                always : '',
+                ing : "입력을 기다리는 중입니다."
+            },
+            watch : { 
+                always : function(){
+                    this.ing = "입력중......"
+                    this.fail(this.always);
+                }
+            },
+            methods : {
+                fail : function(text){
+                    if(text.length < 5){
+                        this.ing = '5글자 이상이어야 합니다.';
+                    }   
+                }
+            }
+        })
+
+
+        </script>
+    </body>
+</html>

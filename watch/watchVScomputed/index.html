@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+            <div id="app">
+                <h1>{{ count }}</h1><br>
+                <h2>computed: {{ calculated }}</h2>
+                <h2>watch: {{ watchedCount }}</h2>
+                <button @click="count --">카운트 감소</button>
+            </div>
+        <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    count: 3,
+                    watchedCount: 9,
+                },
+                computed: {
+                    /*calculated 선언*/
+                    calculated: function () {
+                        return this.count * 3
+                    }
+                },
+                watch: {
+                    /*count감시*/
+                    count: function (newVal) {
+                        /*count가 변경될때마다 watchcount에 결과물 입력*/
+                        this.watchedCount = newVal * 3
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

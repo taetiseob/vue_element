@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+         
+        <div id="app">
+        <!-- component 태그안에 propmessage 가 추가됨 -->
+            <mycomponent propmessage="This is props" ></mycomponent>
+        </div> 
+        <!-- script 들어가는 부분 -->
+        <script>
+            Vue.component('mycomponent',{
+ 
+            props : ['propmessage'],
+            template: "<div>{{ propmessage }}</div>"
+
+            });
+
+            var app = new Vue({
+                
+                el : "#app",
+                data : {
+                    message : "Hello World"
+                }
+
+                })
+
+
+
+
+        </script>
+    </body>
+</html>
+ 
+
+

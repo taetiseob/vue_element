@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div>{{immediately}}</div>
+        </div>
+        <script>
+            var demo = new Vue({
+                el : "#app",
+                data : {
+                    jas : 1,
+                    jas1 : 2
+                },
+                computed : {
+                    immediately : function(){
+                        return this.jas+this.jas1;
+                        //computed API함수느느 이미 처리가 된 후 기능을 잃음
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

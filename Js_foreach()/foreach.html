@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var testArray = ["aaa", "bbb", "ccc", "ddd"];
+
+            //배열의 모든 요소에 EDIT라는 문자열을 더하기
+            //메서드 수행 후 리턴값은 undefined
+            testArray.forEach(function (item, index, array) {
+                array[index] = item + "EDIT";
+            });
+
+            //메서드 수행 후 원본 배열
+            console.log(testArray);
+            ["aaaEDIT", "bbbEDIT", "cccEDIT", "dddEDIT"]
+        </script>
+    </body>
+</html>

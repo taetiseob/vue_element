@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                /*
+                    크리에이션 단계에서 실행되는 훅들이 라이프사이클 중에서도 가장 처음 실행됨
+                    이 단계는 컴포넌트가 돔에 추가되기 전 서버렌더링에도 지원되는 훅
+                     따라서 클라이언트 단과 서버단 렌더링 모두에서 처리해야할 일이 있다면 이 단계에서 함
+                     (아직 컴포넌트가 돔에 추가되기 전이기 떄문에 돔에 접근하거다 this.$el을 사용할수 없음)
+                */
+                beforeCreate () {
+                    console.log('인스턴스 초기화 후, 데이터 관찰/이벤트/감시자 설정 전 호출됩니다.')
+                },
+                created() {
+                    //$el 속성을 사용할 수 없습니다.
+                    console.log('인스턴스가 작성된 후 동기적으로 호출됩니다.');
+                },
+                beforeMount() {
+                    console.log('마운트되기 바로 직전 전 호출됩니다.')
+                },
+                mounted() {
+                    //$el 속성을 사용할 수 있습니다.
+                    console.log('마운트 된 직후 호출됩니다.')
+                },
+                beforeUpdate () {
+                    console.log('데이터가 변경되기 전 호출됩니다.')
+                },
+                updated () {
+                    console.log('데이터가 변경된 후 호출됩니다.')
+                },
+                data: {
+                    message: '안녕하세요 Vue!',
+                    className: 'vue-class'
+                },
+                methods: {
+                        change () {
+                            this.message = '안녕히 가세요 Vue!';
+                        }
+                }
+                })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id= app2>
+            <p>hello</p><span v-html="name" v-show="visible">italic</span>
+        </div>
+        <script>
+            var app2= new Vue({
+                el : '#app2',
+                data : {
+                    name : '<i>이탤릭</i>',
+                    visible : true
+                }
+            })
+        </script>
+    </body>
+</html>

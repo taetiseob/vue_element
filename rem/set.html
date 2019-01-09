@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="http://thumbnews.nateimg.co.kr/view610/http://news.nateimg.co.kr/orgImg/kc/2017/06/27/3505649_MSO.png" alt="이미지정보">
+
+	<button onclick="getAttr()">getAttr</button>
+	<button onclick="setAttr()">setAttr</button>
+
+	<!-- <button onclick="myFunction()">Try it</button> -->
+
+	<p id="son1">이미지 src</p>
+	<p id="son2">이미지 alt</p>
+
+	<img src="" alt="">
+
+	<script>
+		//속성을 get
+		var x2 = document.getElementsByTagName("img")[0].getAttribute("src");
+
+		var x3 = document.getElementsByTagName("img")[0].getAttribute("alt");
+
+		function getAttr(){
+			document.getElementById("son1").innerHTML=x2;
+			document.getElementById("son2").innerHTML=x3;
+			}
+
+		function setAttr(){
+			document.getElementsByTagName("img")[1].setAttribute("src",x2);
+			document.getElementsByTagName("img")[1].setAttribute("alt",x3);
+			document.getElementsByTagName("img")[1].setAttribute("width","200px");
+			document.getElementsByTagName("img")[1].setAttribute("height","200px")
+		}
+	</script>
+</body>
+</html>

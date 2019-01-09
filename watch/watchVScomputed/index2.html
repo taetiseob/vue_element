@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ count }}</h1><br>
+            <!--<h1>{{calculated}}</h1>-->
+            <!--computed의 calculated안의 함수를 실행시키기 위해서는 calculated를 실제로 출력해야 합니다.-->
+            <!-- {{ calculated }} -->
+            <button @click="count --">카운트 감소</button>
+        </div>
+        <script>
+            new Vue({
+                el: "#app",
+            data: {
+                count: 3
+            },
+            computed: {
+                calculated: function () {
+                    if(this.count === 2) {
+                    alert('값이 2가 되었습니다.')
+                }
+                }
+            },
+            watch: {
+                count: function (newVal) {
+                if(newVal === 0) {
+                    alert('값이 0이 되었습니다.')
+                    this.count = 3
+                }
+                }
+            }
+            })
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+         
+        <div id="app">
+            <mycomponent></mycomponent>
+        </div> 
+ <!-- script 들어가는 부분 -->
+        <script>
+            Vue.component('mycomponent',{
+        
+            template: "<div>{{message}}</div>",
+            data(){
+                return {message : 'hello'}
+            }
+            });
+
+            var app = new Vue({
+
+            el : "#app",
+            data : {
+                message : "Hello World"
+            }
+
+            })
+
+        </script>
+    </body>
+</html>
