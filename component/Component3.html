@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            <hello></hello>
+            <hello></hello>
+            <hello></hello>  
+        </div>
+        <script>
+            Vue.component('hello',{ 
+                template: '<h1>{{ title }} <button @click="changeTitle">타이틀변경</button></h1>',
+                data: function() {
+                    return {
+                    title: '안녕하세요!!'
+                    }
+                },
+                methods: {
+                    changeTitle: function() {
+                        this.title = '변경된 타이틀'
+                    }
+                }
+                })
+
+                new Vue({
+                el:"#app"
+                })
+        
+        </script>
+    </body>
+</html>
